@@ -11,6 +11,7 @@ import HijoPadre from './HijoPadre';
 import EjemploUseEffect from './EjemploUseEffect';
 import ValorContext from './UseContext';
 import Abuelo from './Abuelo';
+import ErrorBoundary from './ErrorBoundary';
 
 
 
@@ -82,11 +83,15 @@ function App() {
           parteInferior={parteinferior}
        />
 
-       Calificación:<ContenidoDinamico calificacion={80} />
+       {/* Calificación:<ContenidoDinamico calificacion={80} /> */}
 
-       {calificaciones.map(cal => <ContenidoDinamico key={cal.nombre} {...cal} />)}
+       
 
-     
+       {calificaciones.map(cal => 
+       <ErrorBoundary  key={cal.nombre}>
+           <ContenidoDinamico  {...cal} />
+       </ErrorBoundary> 
+       )}
 
        <h4 className={AppCSS.color}>App.module.css</h4>
        <Reloj></Reloj>

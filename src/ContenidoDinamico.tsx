@@ -41,8 +41,8 @@ export default function ContenidoDinamico(props:any){
     else{
         
         
-        throw `Ha habido un error con la calificación de ${props.nombre}`;
-        /*return (
+    throw `Ha habido un error con la calificación de ${props.nombre}`;//esta linea es la que genera el error
+     /*   return (
             <div>
                 <h3>{props.nombre}: Bueno</h3>
             </div>
